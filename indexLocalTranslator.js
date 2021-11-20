@@ -15,10 +15,10 @@ translate.engines.libre.fetch = ({ url = 'http://localhost:5000/translate', key,
     }
 ]
 
-INPUT_FILE = `./input/[ANK-Raws] Love Live! Sunshine!! 11 [BDrip 1920x1080 HEVC FLAC].ass`
+INPUT_FILE = `./input/[ANK-Raws] Love Live! Sunshine!! 01 [BDrip 1920x1080 HEVC FLAC].ass`
 OUTPUT_FILE = `./output/Out %langpath%.ass`
-BASE_LANG = `ru`
-EXTRA_LANGS = [`ja`,`it`,`pl`]
+BASE_LANG = `en`
+EXTRA_LANGS = [`pl`,`ja`,`it`]//
 TARGET_LANG = `ru`
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
