@@ -35,12 +35,12 @@ function writeFile(path, data, iterator) {
 
 }
 
-
+out_folder = `./k-on`
 async function main() {
     for (const filename of fs.readdirSync(`./input`)) {
         console.log(`Starting ${filename}`);
         INPUT_FILE = `./input/${filename}`
-        OUTPUT_FILE = `./output/[R]${filename}`
+        OUTPUT_FILE = `${out_folder}/[R]${filename}`
 
 
         let file = fs.readFileSync(INPUT_FILE, 'utf8')
@@ -62,7 +62,7 @@ async function main() {
                 else if (line.includes(`PlayResY:`))
                     ResY = parseInt(line.slice(9))
                 else if (line.includes(`Video File:`)) {
-                    OUTPUT_FILE = `./output/[R]${line.replace(/Video File: ?/, ``).split(`/`).slice(-1)[0].split(`.`).slice(0, -1).join(`.`)}.ass`
+                    OUTPUT_FILE = `${out_folder}/[R]${line.replace(/Video File: ?/, ``).split(`/`).slice(-1)[0].split(`.`).slice(0, -1).join(`.`)}.ass`
                     console.log(`Found filename line. Changed OUTPUT_FILE to ${line.replace(/Video File: ?/, ``).split(`.`).slice(0, -1).join(`.`)}`);
                 }
             }
